@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b6mtk5e76l5w2"]
+
+[ext_resource type="Script" uid="uid://de6myhnw8lam4" path="res://scene/death_scene.gd" id="1_mxrf7"]
+[ext_resource type="Texture2D" uid="uid://7i88uu3mbm55" path="res://asset/Terrain/Tileset/Death.png" id="1_vqnvr"]
+
+[node name="death_scene" type="Node2D" unique_id=1704170867]
+script = ExtResource("1_mxrf7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1574452209]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vqnvr")
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=2049650324]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 486.0
+offset_right = 290.0
+offset_bottom = 592.0
+theme_override_font_sizes/font_size = 60
+text = "Replay"
+flat = true
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

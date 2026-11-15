@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_world_pressed() -> void:
+	Global.lives = 4
 	get_tree().change_scene_to_file("res://scene/world_menu.tscn")

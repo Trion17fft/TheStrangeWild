@@ -26,8 +26,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka324"]
-radius = 26.0
-height = 56.0
+radius = 17.0
+height = 38.0
 
 [node name="shrimp" type="CharacterBody2D" unique_id=2077673870]
 script = ExtResource("1_av0ux")
@@ -36,13 +36,13 @@ script = ExtResource("1_av0ux")
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_8tftu")
 animation = &"idle"
-frame_progress = 0.8715975
+frame_progress = 0.7754575
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1303140098]
-collision_layer = 8
+[node name="Area2Dshrimp" type="Area2D" parent="." unique_id=1303140098]
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1428066532]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dshrimp" unique_id=1428066532]
 position = Vector2(0, -28)
 shape = SubResource("CapsuleShape2D_ka324")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2Dshrimp" to="." method="_on_area_2d_body_entered"]

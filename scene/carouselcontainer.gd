@@ -70,6 +70,16 @@ func _process(delta: float) -> void:
 		if selected_index > position_offset_node.get_child_count()-1:
 			selected_index -= 1
 			
+	if Input.is_action_just_pressed("enter"):
+		if selected_index == 0:
+			get_tree().change_scene_to_file("res://scene/forest_level.tscn")
+			
+		if selected_index == 1:
+			get_tree().change_scene_to_file("res://scene/soon.tscn")
+			
+		if selected_index == 2:
+			get_tree().change_scene_to_file("res://scene/soon.tscn")
+			
 func _left():
 		selected_index -= 1
 		if selected_index < 0:

@@ -35,7 +35,7 @@ script = ExtResource("1_y6p0i")
 position = Vector2(0, -32.43)
 sprite_frames = SubResource("SpriteFrames_kriml")
 animation = &"idle"
-frame_progress = 0.6440945
+frame_progress = 0.9969718
 
 [node name="Area2D" type="Area2D" parent="." unique_id=578563726]
 collision_layer = 4

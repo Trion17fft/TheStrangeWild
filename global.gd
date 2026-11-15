@@ -1,6 +1,8 @@
 extends Node
 
 var lives = 4 # nombre de vies
+var cur = false
+
 
 
 

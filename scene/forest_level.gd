@@ -26,3 +26,6 @@ func _process(delta: float) -> void:
 			heart3.hide()
 		0:
 			h_box_container.hide()
+			
+	if Global.lives == 1:
+		get_tree().change_scene_to_file("res://scene/death_scene.tscn")
