@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ckefvhdx66ccq"]
+
+[ext_resource type="Script" uid="uid://bw5hv3nulythf" path="res://scene/shark.gd" id="1_b5e6d"]
+[ext_resource type="Texture2D" uid="uid://bfar2bqwdevue" path="res://asset/Terrain/Tileset/Shark.png" id="1_vcit4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5e6d"]
+atlas = ExtResource("1_vcit4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fysq4"]
+atlas = ExtResource("1_vcit4")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tftu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5e6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fysq4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tftu"]
+size = Vector2(67, 60)
+
+[node name="shark" type="CharacterBody2D" unique_id=905788455]
+script = ExtResource("1_b5e6d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=595375431]
+position = Vector2(0, -32.98)
+sprite_frames = SubResource("SpriteFrames_8tftu")
+frame_progress = 0.17421705
+
+[node name="Area2D" type="Area2D" parent="." unique_id=291103919]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2049644501]
+position = Vector2(0.5, -32)
+shape = SubResource("RectangleShape2D_8tftu")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

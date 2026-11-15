@@ -127,10 +127,10 @@ autoplay = "default"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="AnimatedSprite2D" unique_id=382117847]
 
-[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=992559988]
+[node name="Area2D2" type="Area2D" parent="AnimatedSprite2D" unique_id=992559988]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=1163184654]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D2" unique_id=1163184654]
 position = Vector2(-1.3882265, 9.064463)
 shape = SubResource("RectangleShape2D_8tftu")
 
@@ -140,7 +140,7 @@ position = Vector2(2.0000153, -38)
 scale = Vector2(3.0566778, 2.9257798)
 sprite_frames = SubResource("SpriteFrames_473jd")
 autoplay = "default"
-frame_progress = 0.29808733
+frame_progress = 0.08938201
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D2" unique_id=560236110]
 root_node = NodePath("../..")

@@ -22,23 +22,16 @@ func _ready() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("playerattack") and self.visible:
 		turtle_lives -= 1
-		if turtle_lives == 0:
+		if turtle_lives == 0 and Global.cur == false:
 			player_owl.position = Vector2(551.0,10534.0)
 			camera_2d.limit_bottom = 10031
 			camera_2d.limit_top = 10708
 			h_box_container.position = Vector2(-100,-500)
 			self.hide()
+
 			
 			Global.lives = 4
 			
-	
-
-
-
-	
-	
-
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("Collision avec :", body.name)
 	Global.lives -= 1
