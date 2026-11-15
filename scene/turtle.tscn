@@ -42,5 +42,3 @@ frame_progress = 0.5881094
 position = Vector2(0, -22)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ka324")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=441546709]
