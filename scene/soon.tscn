@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://bd52yfwslh05j"]
 
+[ext_resource type="Script" uid="uid://bdv3t3tw0ln6p" path="res://scene/soon.gd" id="1_424pc"]
+[ext_resource type="Texture2D" uid="uid://c4vttruhcgql" path="res://asset/Soon.png" id="1_xa5km"]
+
 [node name="soon" type="Node2D" unique_id=974348687]
+script = ExtResource("1_424pc")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=326574814]
-offset_right = 1154.0
-offset_bottom = 659.0
+offset_left = 55.0
+offset_top = -191.0
+offset_right = 1209.0
+offset_bottom = 750.0
+texture = ExtResource("1_xa5km")

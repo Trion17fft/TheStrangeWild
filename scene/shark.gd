@@ -1,28 +1,28 @@
 extends CharacterBody2D
 
+@onready var area_2d: Area2D = $Area2D
+
+@onready var h_box_container: HBoxContainer = $"../Camera2D/HBoxContainer"
+@onready var player_owl: CharacterBody2D = $"../PlayerOwl"
+@onready var camera_2d: Camera2D = $"../Camera2D"
+
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func _ready() -> void:
+	
+	area_2d.area_entered.connect(_on_area_entered)
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+var shark_lives = 2
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("playerattack") and self.visible:
+		if shark_lives == 0 and Global.cur == true:
+			get_tree().change_scene_to_file("res://scene/win.tscn")
+			
+			
+			
 
 
 func _on_area_2d_area_entered(body: Node2D) -> void:

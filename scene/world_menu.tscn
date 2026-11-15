@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b766wrq0yq0g7" path="res://asset/Terrain/Tileset/Ocean Menu.png" id="4_am7m7"]
 [ext_resource type="FontFile" uid="uid://bs56luq7j8igv" path="res://asset/Terrain/Tileset/Naluka.ttf" id="4_yed8r"]
 [ext_resource type="Texture2D" uid="uid://dg44h8xrrckmc" path="res://asset/Terrain/Tileset/Desert Menu.png" id="5_0nyvo"]
+[ext_resource type="AudioStream" uid="uid://bvhlssuymhbr7" path="res://scene/Menu.mp3" id="7_pnl87"]
 
 [node name="World_menu" type="Node2D" unique_id=257012741]
 position = Vector2(676, 432)
@@ -85,6 +86,11 @@ offset_top = 38.850006
 offset_right = 188.25
 offset_bottom = 88.850006
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1497907928]
+stream = ExtResource("7_pnl87")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="right" to="." method="_on_right_pressed"]

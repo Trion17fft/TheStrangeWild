@@ -29,3 +29,7 @@ func _process(delta: float) -> void:
 			
 	if Global.lives <= 1:
 		get_tree().change_scene_to_file("res://scene/death_scene.tscn")
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	Global.lives -= 1

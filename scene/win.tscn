@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cr1ykbqv16pin"]
+
+[ext_resource type="Script" uid="uid://dbriu7h3snt51" path="res://node_2d.gd" id="1_yalvk"]
+[ext_resource type="Texture2D" uid="uid://ccdeqq3r13kkr" path="res://asset/Victini_1.png" id="2_8lnkg"]
+
+[node name="Node2D" type="Node2D" unique_id=2112785944]
+script = ExtResource("1_yalvk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1562242176]
+offset_left = -6.0
+offset_top = -22.0
+offset_right = 1159.0
+offset_bottom = 656.0
+texture = ExtResource("2_8lnkg")
+expand_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=1168167481]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 518.0
+offset_right = 411.0
+offset_bottom = 624.0
+theme_override_font_sizes/font_size = 60
+text = "Bounce Back"
+flat = true
+
+[node name="Button2" type="Button" parent="TextureRect" unique_id=1326372737]
+layout_mode = 0
+offset_left = 806.0
+offset_top = 526.0
+offset_right = 1109.0
+offset_bottom = 628.0
+theme_override_colors/font_color = Color(0.31731278, 0.5502209, 0.36331, 1)
+theme_override_font_sizes/font_size = 56
+text = "Menu"
+flat = true
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/Button2" to="." method="_on_button_2_pressed"]

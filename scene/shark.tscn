@@ -25,8 +25,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tftu"]
-size = Vector2(67, 60)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ftnpg"]
+radius = 26.5
+height = 53.0
 
 [node name="shark" type="CharacterBody2D" unique_id=905788455]
 script = ExtResource("1_b5e6d")
@@ -34,12 +35,14 @@ script = ExtResource("1_b5e6d")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=595375431]
 position = Vector2(0, -32.98)
 sprite_frames = SubResource("SpriteFrames_8tftu")
-frame_progress = 0.17421705
+autoplay = "default"
+frame_progress = 0.92300713
 
 [node name="Area2D" type="Area2D" parent="." unique_id=291103919]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2049644501]
-position = Vector2(0.5, -32)
-shape = SubResource("RectangleShape2D_8tftu")
+position = Vector2(1, -30)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ftnpg")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

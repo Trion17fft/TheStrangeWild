@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
 @onready var navigation_region_2d: NavigationRegion2D = $"../NavigationRegion2D"
-@onready var self_area: Area2D = $AnimatedSprite2D/Area2D
+
+@onready var area_2d_2: Area2D = $AnimatedSprite2D/Area2D2
+@onready var h_box_container: HBoxContainer = $"../Camera2D/HBoxContainer"
+
 @onready var navigation_agent: NavigationAgent2D = $AnimatedSprite2D/NavigationAgent2D
 @onready var player_owl: CharacterBody2D = $"../PlayerOwl"
 @onready var camera_2d: Camera2D = $"../Camera2D"
@@ -12,7 +15,7 @@ var shell_lives = 2
 
 func _ready() -> void:
 	
-	self_area.area_entered.connect(_on_area_entered)
+	area_2d_2.area_entered.connect(_on_area_entered)
 
 func _physics_process(delta: float) -> void:
 		if Global.cur == true:
@@ -27,9 +30,10 @@ func _on_area_entered(area: Area2D) -> void:
 		shell_lives -= 1
 		if shell_lives == 0 and Global.cur == true:
 			self.hide()
-			player_owl.position = Vector2(551.0,8900)
-			camera_2d.limit_bottom = 8731
-			camera_2d.limit_top = 9408
+			player_owl.position = Vector2(551.0,7700)
+			camera_2d.limit_bottom = 7950
+			camera_2d.limit_top = 6664
+			h_box_container.position = Vector2(-100,-1280)
 	
 
 

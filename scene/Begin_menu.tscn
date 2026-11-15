@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://w2f5jux5ui83" path="res://scene/begin_menu.gd" id="1_71lk5"]
 [ext_resource type="Texture2D" uid="uid://d1rmx5ql3mjme" path="res://asset/Terrain/Tileset/Main Menu-1.png.png" id="2_b1w8a"]
 [ext_resource type="Texture2D" uid="uid://cfmy5sgn5u3y8" path="res://asset/Terrain/Tileset/Main Menu-2.png.png" id="3_tuujy"]
+[ext_resource type="AudioStream" uid="uid://bvhlssuymhbr7" path="res://scene/Menu.mp3" id="4_b1w8a"]
 
 [sub_resource type="Animation" id="Animation_t21iu"]
 length = 0.001
@@ -68,8 +69,14 @@ theme_override_font_sizes/font_size = 45
 text = "World"
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=1384985047]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Settings"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2018345369]
+stream = ExtResource("4_b1w8a")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/World" to="." method="_on_world_pressed"]

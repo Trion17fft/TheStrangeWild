@@ -13,12 +13,24 @@ texture = ExtResource("1_vqnvr")
 
 [node name="Button" type="Button" parent="TextureRect" unique_id=2049650324]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 486.0
-offset_right = 290.0
-offset_bottom = 592.0
+offset_left = 32.0
+offset_top = 518.0
+offset_right = 411.0
+offset_bottom = 624.0
 theme_override_font_sizes/font_size = 60
-text = "Replay"
+text = "Bounce Back"
+flat = true
+
+[node name="Button2" type="Button" parent="TextureRect" unique_id=848405811]
+layout_mode = 0
+offset_left = 806.0
+offset_top = 526.0
+offset_right = 1109.0
+offset_bottom = 628.0
+theme_override_colors/font_color = Color(0.8745098, 0.18039216, 0.12941177, 1)
+theme_override_font_sizes/font_size = 56
+text = "Rage Quit"
 flat = true
 
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/Button2" to="." method="_on_button_2_pressed"]

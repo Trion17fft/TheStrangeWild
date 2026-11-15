@@ -12,4 +12,9 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scene/Begin_menu.tscn")
+	Global.lives =  4
+	get_tree().change_scene_to_file("res://scene/forest_level.tscn")
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().quit()
