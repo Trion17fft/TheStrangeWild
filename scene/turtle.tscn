@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://de17juktjekwy"]
+
+[ext_resource type="Texture2D" uid="uid://c2ev483pjtiqm" path="res://asset/Turtle.png" id="1_7no0q"]
+[ext_resource type="Script" uid="uid://dd6dtyfx6bhkg" path="res://scene/turtle.gd" id="1_y6p0i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6p0i"]
+atlas = ExtResource("1_7no0q")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2afw"]
+atlas = ExtResource("1_7no0q")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kriml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6p0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2afw")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka324"]
+radius = 21.0
+height = 64.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=618975690]
+script = ExtResource("1_y6p0i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1136730967]
+position = Vector2(0, -32.43)
+sprite_frames = SubResource("SpriteFrames_kriml")
+animation = &"idle"
+frame_progress = 0.5881094
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1199327049]
+position = Vector2(0, -22)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ka324")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=441546709]
