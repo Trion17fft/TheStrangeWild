@@ -64,6 +64,7 @@ offset_top = 40.850006
 offset_right = -176.75
 offset_bottom = 90.850006
 text = "Left"
+flat = true
 
 [node name="right" type="Button" parent="." unique_id=396208246]
 offset_left = -11.75
@@ -71,6 +72,7 @@ offset_top = 38.850006
 offset_right = 188.25
 offset_bottom = 88.850006
 text = "Right"
+flat = true
 
 [connection signal="pressed" from="left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="right" to="." method="_on_right_pressed"]

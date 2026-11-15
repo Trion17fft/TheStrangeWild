@@ -25,9 +25,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka324"]
-radius = 21.0
-height = 64.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_8tftu"]
+radius = 45.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=618975690]
 script = ExtResource("1_y6p0i")
@@ -36,9 +35,13 @@ script = ExtResource("1_y6p0i")
 position = Vector2(0, -32.43)
 sprite_frames = SubResource("SpriteFrames_kriml")
 animation = &"idle"
-frame_progress = 0.5881094
+frame_progress = 0.6440945
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1199327049]
-position = Vector2(0, -22)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_ka324")
+[node name="Area2D" type="Area2D" parent="." unique_id=578563726]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1536157537]
+position = Vector2(0, -23)
+shape = SubResource("CircleShape2D_8tftu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

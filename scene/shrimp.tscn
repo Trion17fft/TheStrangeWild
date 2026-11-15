@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bug2b45vesac1"]
+
+[ext_resource type="Script" uid="uid://bqu0bgq52axdj" path="res://scene/shrimp.gd" id="1_av0ux"]
+[ext_resource type="Texture2D" uid="uid://bcmbo3d1pin3l" path="res://asset/Shrimp.png" id="1_yckw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av0ux"]
+atlas = ExtResource("1_yckw4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2beck"]
+atlas = ExtResource("1_yckw4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tftu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av0ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2beck")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka324"]
+radius = 26.0
+height = 56.0
+
+[node name="shrimp" type="CharacterBody2D" unique_id=2077673870]
+script = ExtResource("1_av0ux")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1803129745]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_8tftu")
+animation = &"idle"
+frame_progress = 0.8715975
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1303140098]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1428066532]
+position = Vector2(0, -28)
+shape = SubResource("CapsuleShape2D_ka324")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var turtle: CharacterBody2D = $"../turtle"
+@onready var animated_sprite_2d_2: AnimatedSprite2D = $AnimatedSprite2D2
+@onready var self_area: Area2D = $hitbox
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
 
 var max_speed = 400
 var last_direction := Vector2(1,0)
-
+		
 func _physics_process(delta):
 	
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -17,6 +20,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("attack"):
 		await get_tree().create_timer(1)
 		animation_player.play("attack")
+		animated_sprite_2d_2.show()
+		await get_tree().create_timer(0.5).timeout
+		animated_sprite_2d_2.hide()
 	
 	if direction.length() > 0:
 		last_direction = direction
@@ -52,4 +58,5 @@ func play_idle_animation(direction):
 		
 	elif direction.y < 0:
 		$AnimatedSprite2D.play("up")
+		
 	
